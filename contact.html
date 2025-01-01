@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechGearShop - Contact</title>
+    <style>
+        .form-result {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-result h3 {
+            color: #ff8800;
+            margin-bottom: 15px;
+        }
+        
+        .form-result p {
+            margin: 5px 0;
+            font-size: 14px;
+            color: #333;
+        }
+        
+        .form-result span {
+            color: #555;
+        }
+        </style>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo-slogan">
+            <a href="index.html">
+                <div class="logo">
+                    <img src="images/logo.png" alt="TechGearShop logo">
+                </div>
+            </a>
+            <div class="shop-name">TechGearShop</div>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> Accueil</a></li>
+                <li><a href="produits.html"><i class="fas fa-shop"></i> Produits</a></li>
+                <li><a href="about.html"><i class="fas fa-info-circle"></i> À propos</a></li>
+                <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+        </nav>
+
+        <div class="search-container">
+            <div class="button-container">
+                <button class="btn" id="btn-connect">
+                    <i class="fas fa-user"></i> Se connecter
+                </button>
+                <button class="btn" id="btn-cart">
+                    <i class="fas fa-shopping-cart"></i> Panier
+                    <span class="cart-bubble" id="cart-count">0</span>
+                </button>
+                <button class="btn" id="btn-help">
+                    <i class="fas fa-question-circle"></i> Aide
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="contact">
+            <h2>Contactez-nous</h2>
+            <p>Si vous avez des questions ou des préoccupations, n'hésitez pas à nous contacter. Nous sommes là pour vous aider !</p>
+
+            <div class="contact-info">
+                <h3>Informations de Contact</h3>
+                <ul>
+                    <li><strong>Adresse :</strong> Rue Malika, Dakar, Sénégal</li>
+                    <li><strong>Téléphone :</strong> +221 33 902 14 49</li>
+                    <li><strong>Email :</strong> <a href="mailto:support@techgearshop.com">support@techgearshop.com</a></li>
+                </ul>
+            </div>
+
+            <div class="contact-form">
+                <h3>Formulaire de Contact</h3>
+                <p>Envoyez-nous un message, et nous vous répondrons dans les plus brefs délais.</p>
+                <form id="contactForm">
+                    <label for="name">Nom Complét :</label>
+                    <input type="text" id="name" name="name" required><br><br>
+                    
+                    <label for="email">Email :</label>
+                    <input type="email" id="email" name="email" required><br><br>
+                    
+                    <label for="subject">Objet :</label>
+                    <input type="text" id="subject" name="subject" required><br><br>
+
+                    <label for="message">Message :</label><br>
+                    <textarea id="message" name="message" rows="4" required></textarea><br><br>
+                    
+                    <button type="submit" class="btn">Envoyer</button>
+                </form>
+            </div>
+
+            <div id="form-data-display" class="form-data-display" style="display: none; margin-top: 20px;">
+                <h3>Vos informations :</h3>
+                <p><strong>Nom :</strong> <span id="display-name"></span></p>
+                <p><strong>Email :</strong> <span id="display-email"></span></p>
+                <p><strong>Objet :</strong> <span id="display-subject"></span></p>
+                <p><strong>Message :</strong> <span id="display-message"></span></p>
+            </div>
+
+            <div class="map">
+                <h3>Notre Localisation</h3>
+                <p>Vous pouvez également nous trouver à l'adresse suivante :</p>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d507747.34770913985!2d-17.517656274542716!3d14.692542858179376!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x18f905482e7052f7%3A0x2414531db6487bf4!2sDakar%2C%20S%C3%A9n%C3%A9gal!5e0!3m2!1sfr!2sus!4v1676895202454!5m2!1sfr!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-info">
+            <div class="footer-links">
+                <h4>Liens Utiles</h4>
+                <ul>
+                    <li><i class="fas fa-file-contract"></i> <a href="#">Conditions générales de vente</a></li>
+                    <li><i class="fas fa-user-shield"></i> <a href="#">Politique de confidentialité</a></li>
+                    <li><i class="fas fa-undo"></i> <a href="#">Retour et échanges</a></li>
+                </ul>
+            </div>
+            <div class="footer-payment">
+                <h4>Modes de Paiement</h4>
+                <ul id="footer-payment">
+                    <li><img src="images/visa.png"><span>Visa</span></li>
+                    <li><img src="images/orange-money.png"><span>Orange Money</span></li>
+                    <li><img src="images/mastercard.png"><span>MasterCard</span></li>
+                    <li><img src="images/wave.jpg"><span>Wave</span></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact</h4>
+                <ul>
+                    <li id="phone"><i class="fas fa-phone-alt"></i> <a href="tel:+221339021942">+221 33 902 19 42</a></li>
+                    <li id="location"><i class="fas fa-map-marker-alt"></i> <a href="https://www.google.com/maps/search/Dakar,+Sénégal" target="_blank">Dakar, Sénégal</a></li>
+                    <li id="mailto"><i class="fas fa-envelope"></i> <a href="mailto:contact@techgearshop.com">contact@techgearshop.com</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="social-links">
+            <h4>Réseaux Sociaux</h4>
+            <ul class="social-links">
+                <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
+                <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
+                <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+                <li><a href="#"><i class="fab fa-whatsapp"></i> Whatsapp</a></li>
+            </ul>
+        </div>
+        <p><i class="fas fa-copyright"></i> 2024 TechGearShop. Tous droits réservés.</p>
+        <p>Votre boutique en ligne de confiance pour tous vos accessoires informatiques.</p>
+        <p>Nous proposons des produits de qualité à des prix imbattables.</p>
+        <p>TechGearShop : où la technologie rencontre l'excellence.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault(); 
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+
+            document.getElementById('display-name').textContent = name;
+            document.getElementById('display-email').textContent = email;
+            document.getElementById('display-subject').textContent = subject;
+            document.getElementById('display-message').textContent = message;
+
+            document.getElementById('form-data-display').style.display = 'block';
+        });
+        
+        
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,857 @@
+/* Styles Corps de la page */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #ffffff; /* blanc */
+    color: #333; /* Texte noir légèrement adouci */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background-color: #f68b1e; /* Orange vif */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 30px;
+    color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre pour séparation douce */
+}
+
+header .logo { 
+        display: flex;
+        flex-direction: column; /* Permet de placer le nom sous le logo */
+        align-items: center;
+        margin-left: 5px; /* Décalage à gauche de 5 pixels */
+}
+
+header .logo img {
+    max-height: 60px;
+    background-color: #fff; /* Contraste sur fond orange */
+    padding: 10px;
+    border-radius: 8px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Style de base pour le logo */
+.logo {
+    width: 100px; /* Ajustez selon la taille de votre logo */
+    height: auto; 
+    transition: all 0.3s ease; /* Pour une transition fluide */
+  }
+  
+  /* Effet hover pour ajouter l'ombre */
+  .logo:hover {
+    transform: scale(1.1); /* Légère augmentation de la taille */
+  }
+  
+/* Nom du shop sous le logo */
+header .shop-name {
+    font-size: 1.2rem;
+    font-weight: bold; /* Met le nom en gras */
+    margin-top: 10px; /* Marge pour espacer le nom du logo */
+    color: #fff; /* Couleur blanche pour le contraste */
+}
+
+/* Navigation */
+nav {
+    flex: 1;
+}
+
+nav ul {
+    display: flex; /* Utilisation de flexbox pour l'alignement horizontal */
+    justify-content: center; /* Centre les éléments horizontalement */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 10px; /* Espacement entre les éléments */
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem; /* Ajuster la taille du texte */
+    display: flex;
+    align-items: center;
+}
+
+nav ul li a i {
+    margin-right: 6px; /* Espacement entre icône et texte */
+    font-size: 1.0rem; /* Taille des icônes ajustée */
+}
+
+nav ul li a:hover {
+    color: #000;
+    text-shadow: 1px 1px 4px rgba(255, 255, 255, 0.6); /* Changement de couleur et effet survol */
+}
+
+
+/* Search Container */
+.search-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Place tous les éléments à droite de l'en-tête */
+    padding: 20px;
+    gap: 15px;
+}
+
+.button-container {
+    display: flex;
+    gap: 10px;
+}
+
+
+.btn {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    background-color: #fff;
+    color: #f68b1e;
+    border: none;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn i {
+    margin-right: 5000px;
+}
+
+.btn:hover {
+    background-color: #f68b1e;
+    color: #fff;
+}
+/* Bulle de notification du panier */
+.cart-bubble {
+    background-color: rgb(255, 68, 0);
+    color: white;
+    font-size: 18px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%; /* Cercle arrondi */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    min-width: 18px;
+    min-height: 18px; 
+}
+
+
+/* Bulle responsive - assurez-vous qu'elle s'ajuste sur les grands écrans */
+@media (min-width: 1024px) {
+    .cart-bubble {
+        top: -5px;
+        right: -5px;
+        font-size: 14px; /* Ajuster la taille sur les grands écrans */
+    }
+}
+
+@media (max-width: 767px) {
+    .cart-bubble {
+        top: -5px;
+        right: -5px;
+        font-size: 12px; /* Réduire la taille sur mobile */
+    }
+}
+/* Input de recherche */
+.search-input {
+    padding: 8px 15px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-right: 10px;
+    width: 200px;
+}
+
+/* Bouton de recherche */
+.search-button {
+    padding: 8px 15px;
+    font-size: 1rem;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #f68b1e;
+    border: none;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-button i {
+    margin-right: 5px;
+}
+
+.search-button:hover {
+    background-color: #ffffff;
+    color: #fff;
+}
+
+
+/* Hero Section */
+.hero iframe {
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.hero {
+    margin-top: 2em;
+    text-align: center;
+}
+
+.btn-hero {
+    padding: 10px 20px;
+    font-size: 18px;
+    text-align: center;
+    text-decoration: none;
+    color: black; /* Texte noir par défaut */
+    background-color: rgba(255, 145, 0, 0.884); /* Fond orange par défaut */
+    border: 2px solid rgb(0, 0, 0); /* Bordure orange */
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-hero:hover {
+    color: orange; /* Texte orange au survol */
+    background-color: black; /* Fond noir au survol */
+}
+
+/* Categories Section */
+.categories {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #f4f4f4; /* Gris léger pour contraste */
+}
+
+.categories h3 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.category {
+    display: inline-block;
+    margin: 20px;
+    width: 280px; /* Garde les dimensions initiales */
+    background-color: #fff; /* Fond blanc propre */
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 10px; /* Bordures arrondies */
+    border: 5px solid #ff6600; /* Bordure orange par défaut */
+    transition: transform 0.2s ease, box-shadow 0.3s ease, border-color 0.3s ease; /* Transition pour bordure */
+}
+
+/* Enlever le soulignement des liens dans les catégories */
+.category a {
+    text-decoration: none; /* Supprime le soulignement */
+}
+
+/* Optionnel : Modifier la couleur au survol pour un effet de survol */
+.category a:hover {
+    color: #ff6600; /* Exemple de couleur lors du survol */
+}
+
+/* Effet au survol (hover) */
+.category:hover {
+    transform: translateY(-10px); /* Décalage lors du survol */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Ombre noire au survol */
+    border-color: transparent; /* Enlève la bordure orange au survol */
+    border-image: linear-gradient(55deg, #ff6600, #ffffff) 1; /* Bordure dégradée orange-blanc au survol */
+    border-radius: 10px; /* Garder les coins arrondis lors du survol pour ne pas déformer l'apparence */
+}
+
+.category img {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+.category h4 {
+    color: #f68b1e; /* Orange foncé pour les titres */
+    font-size: 1.5rem;
+    margin-top: 15px;
+}
+
+.category p {
+    color: #1c1b1b;
+    font-size: 1rem;
+}
+
+/* Mise en page responsive pour les petits écrans */
+@media only screen and (max-width: 768px) {
+    .category {
+        width: 90%; /* Occupe plus de largeur sur les petits écrans */
+        margin-bottom: 20px;
+    }
+
+    .categories {
+        padding: 20px 10px; /* Réduit la marge interne */
+    }
+}
+
+.search-button {
+    padding: 8px 15px;
+    background-color: #f68b1e; /* Orange vif */
+    color: white;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.search-button:hover {
+    background-color:#f68b1e; /* Orange foncé au survol */
+    transform: scale(1.05);
+}
+
+.search-container i {
+    margin-right: 7px;
+}
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.btn {
+    background-color: #fff; /* Fond blanc pour les boutons */
+    color: #333; /* Couleur du texte par défaut */
+    padding: 8px 16px; /* Taille réduite du bouton */
+    font-size: 0.9rem; /* Taille de police réduite */
+    border: 2px solid #ff6600; /* Bordure orange autour du bouton */
+    border-radius: 20px; /* Coins arrondis */
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Espacement entre l'icône et le texte */
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
+}
+
+.btn i {
+    font-size: 1rem; /* Taille des icônes réduite */
+}
+
+.btn:hover {
+    background-color: #ff6600; /* Fond orange au survol */
+    color: #fff; /* Texte en blanc au survol */
+    border-color: #f76e12; /* Bordure orange clair au survol */
+}
+
+/* Responsivité pour la barre de recherche */
+@media (max-width: 768px) {
+
+    header {
+        flex-direction: column;
+        align-items: center;  /* Aligne tout le contenu du header au centre */
+        padding: 10px 15px; /* Réduit la taille de padding pour mieux s'adapter à l'écran */
+    }
+
+    /* Réorganiser la barre de recherche */
+    .search-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin-top: 15px;
+        gap: 10px;
+    }
+
+    .search-container input[type="text"] {
+        width: 80%;  /* L'élargir un peu pour qu'elle prenne plus d'espace sur l'écran */
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 1rem;
+    }
+
+    .search-button {
+        padding: 5px;
+        background-color: #f68b1e;
+        border: none;
+        border-radius: 5px;
+        color: #fff;
+        cursor: pointer;
+        width: 80%;  /* Prendre toute la largeur */
+        font-size: 1.1rem;
+    }
+    
+
+    /* Adaptation de la zone des boutons dans header */
+    .button-container button {
+        margin-bottom: 10px;
+        width: 80%; /* Largeur des boutons sur petits écrans */
+    }
+
+    /* Recentrer l'élément logo et nav */
+    .logo-slogan {
+        margin-bottom: 10px;
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    nav ul li {
+        margin: 0;
+    }
+
+    nav ul li a {
+        font-size: 1rem;
+    }
+}
+
+
+/* CSS pour "À propos" */
+
+.about h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #f68b1e;
+    animation: fadeIn 1s ease;
+}
+
+.about-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: space-between;
+    margin: 0 20px;
+}
+
+.about-text {
+    flex: 1 1 45%;
+    background-color: #f8f8f8;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.about-text:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.2);
+}
+
+.about-text h3 {
+    font-size: 1.6rem;
+    color: #f68b1e;
+    margin-bottom: 10px;
+}
+
+.about-text p {
+    line-height: 1.6;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+/* Style des listes des valeurs */
+.about-text ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.about-text ul li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.about-text ul li::before {
+    content: "\f00c";  /* FontAwesome check icon */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    margin-right: 10px;
+    color: #f68b1e;
+}
+
+/* Section Principale - Effet de survol */
+.main {
+    transition: all 0.3s ease-in-out;
+}
+
+.main:hover {
+    background-color: #f1f1f1; /* Ajoute une couleur de fond douce lors du survol */
+    transform: scale(1.02); /* Effet léger de zoom sur la section principale */
+}
+
+/* Contact Page Styles */
+.contact {
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.contact:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Accentue l'ombre lors du survol */
+    transform: translateY(-5px); /* Décale légèrement la section vers le haut */
+}
+
+.contact h2 {
+    text-align: center;
+    font-size: 26px;
+    color: #d14d0c; /* Même couleur chaude pour la cohérence */
+    margin-bottom: 30px;
+    font-weight: bold; /* Mise en gras */
+}
+
+.contact p {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+.contact-info {
+    margin-bottom: 40px;
+}
+
+.contact-info h3 {
+    font-size: 22px;
+    color: #d14d0c; /* Même couleur chaude pour la cohérence */
+    margin-bottom: 20px;
+    font-weight: bold; /* Mise en gras */
+   
+}
+
+.contact-info ul {
+    list-style: none;
+}
+
+.contact-info li {
+    font-size: 18px;
+    margin-bottom: 15px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.contact-info li:hover {
+    background-color: #f7f7f7;
+    color: #ff6600;
+    transform: translateX(5px);
+}
+
+.contact-info a {
+    text-decoration: none;
+    color: #ff6600;
+}
+
+.contact-info a:hover {
+    color: #ff6600;
+    text-decoration: underline;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+/* Formulaire de contact */
+.contact-form {
+    margin-bottom: 10px;
+}
+.contact-info h3 {
+    font-size: 22px;
+    color: #d14d0c; /* Même couleur chaude pour la cohérence */
+    margin-bottom: 20px;
+    font-weight: bold; /* Mise en gras pour le même style */
+}
+
+
+.contact-form h3 {
+    font-size: 22px;
+    color: #d14d0c; /* Même couleur chaude pour la cohérence */
+    margin-bottom: 20px;
+    font-weight: bold; /* Mise en gras */
+}
+
+.contact-form p {
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+.contact-form label {
+    font-size: 16px;
+    color: #000000;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    box-sizing: border-box; /* S'assure que le padding et les bordures sont pris en compte */
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.contact-form input:hover,
+.contact-form textarea:hover {
+    border-color: #ff6600;
+    background-color: #f7f7f7;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #ff6600;
+    background-color: #fff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(255, 102, 0, 0.5);
+}
+
+.contact-form button {
+    background-color: #ff6600;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #ff4400;
+    transform: translateY(-2px);
+}
+
+.contact-form button:active {
+    transform: translateY(2px);
+}
+
+/* Map Section */
+.map iframe {
+    width: 100%;
+    height: 400px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.map iframe:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Effet d'ombre accentuée sur la carte lors du survol */
+}
+
+/* Media Query for Smaller Screens */
+@media (max-width: 768px) {
+    .contact {
+        padding: 15px;
+    }
+
+    .contact h2 {
+        font-size: 22px;
+        color: #d14d0c; /* Couleur ajustée pour petites résolutions */
+        margin-bottom: 20px;
+        font-weight: bold; /* Mise en gras */
+
+    }
+
+    .contact-info ul {
+        padding-left: 20px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        padding: 10px;
+    }
+
+    .contact-form button {
+        width: 100%;
+        font-size: 16px;
+    }
+
+    .map iframe {
+        height: 300px;
+    }
+}
+
+
+/* Media Query for Smaller Screens */
+@media (max-width: 768px) {
+    .contact {
+        padding: 15px;
+    }
+
+    .contact h2 {
+        font-size: 22px;
+        color: #1c0c01;
+    }
+
+    .contact-info ul {
+        padding-left: 20px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        padding: 10px;
+    }
+
+    .contact-form button {
+        width: 100%;
+        font-size: 16px;
+    }
+
+    .map iframe {
+        height: 300px;
+    }
+}
+
+
+/* Responsiveness Fix for Smaller Screens */
+@media (max-width: 768px) {
+    .contact-form input,
+    .contact-form textarea {
+        width: 100%; /* Remarque pour s'assurer qu'ils s'adaptent à la taille de l'écran sur mobile */
+        padding: 10px;
+    }
+}
+/* Centrer les titres des sections */
+.contact h2,
+.contact-info h3,
+.contact-form h3 {
+    text-align: center; /* Centrer le texte horizontalement */
+    margin-bottom: 20px; /* Ajout d'une marge sous les titres */
+}
+
+/* Centrer les titres dans la section "À propos" */
+.about h2 {
+    text-align: center; /* Centrer le titre de la section "À propos" */
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #f68b1e;
+}
+
+/* Style pour le titre h3 dans la section Informations de Contact */
+.contact-info h3 {
+    font-size: 22px; /* Taille de police du titre */
+    color: #d14d0c; /* Couleur ajustée pour petites résolutions */
+    margin-bottom: 20px; /* Marge en bas pour séparer du texte */
+    font-weight: bold; /* Mise en gras */
+}
+
+
+/* Footer */
+footer {
+    background-color: #212121; /* Noir profond */
+    padding: 20px 0;
+    text-align: center;
+    color: #fff;
+    border-top: 5px solid #212121 /* Ligne orange de séparation */
+}
+
+footer ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+footer ul li a {
+    color: #fff;
+    font-size: 1.3rem;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease;
+}
+
+footer ul li a i {
+    margin-right: 10px;
+}
+
+footer a {
+    text-decoration: none; /* Supprime le soulignement */
+}
+
+/* Optionnel : Modifier la couleur au survol pour un effet de survol */
+footer a:hover {
+    color: #ff6600; /* Exemple de couleur lors du survol */
+}
+
+footer ul li a:hover {
+    color: #f68b1e; /* Jaune/orange vif au survol */
+}
+.footer-info .footer-contact {
+    flex: 1;
+    padding: 10px;
+}
+
+.footer-info h4 {
+    font-size: 1.2rem;
+    color: #f68b1e; /* Titre orange */
+    margin-bottom: 10px;
+}
+.social-links h4 {
+    font-size: 1.2rem;
+    color: #f68b1e; /* Titre orange */
+    margin-bottom: 10px;
+}
+
+.footer-info ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+    
+    .footer-info ul li {
+        font-size: 1rem;
+        margin-bottom: 8px;
+        display: flex;
+        justify-content: flex-start; /* Alignement à gauche */
+        align-items: center; /* Centre verticalement les éléments */
+    }
+    
+    .footer-info ul li span {
+        margin-left: 10px; /* Espacement entre l'image et le texte */
+    }
+/* Placer les éléments de la liste en colonne et centrer le contenu */
+.footer-info .footer-payment ul {
+    font-size: medium;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Utilise Flexbox pour aligner les éléments */
+    justify-content: center; /* Centrer les éléments horizontalement */
+    align-items: center; /* Centrer les éléments verticalement si nécessaire */
+    flex-direction: column; /* Afficher les éléments en colonne */
+}
+
+.footer-info .footer-payment ul li {
+    margin-bottom: 15px; /* Espacement entre les éléments */
+}
+
+/* Ajuster la taille des icônes de paiement et leur espacement */
+.footer-info ul li img {
+    width: 40px; /* Taille des icônes */
+    height: auto;
+    margin-right: 10px; /* Espacement entre l'image et le texte */
+}
+#footer-payment li:hover {
+    cursor: pointer; /* Afficher un curseur au survol */
+    color: #f68b1e; /* Jaune/orange vif au survol */
+}
+#phone, #location,#mailto {
+    font-size: 1.2rem;
+    color: #ffffff; /* Couleur ajustée pour petites résolutions */
+    margin-bottom: 20px;
+    transition: color 0.3s ease; /* Ajout d'une transition pour l'effet hover */
+}
+
+#phone:hover, #location:hover {
+    color: #f68b1e; /* Changement de couleur au survol en orange */
+}
+

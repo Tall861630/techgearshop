@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechGearShop - </title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+    <style>  
+
+        main {
+                    padding: 20px;
+                }
+                h2 {
+                    text-align: center;
+                    color: #d14d0c;
+                    font-size: 28px;
+                    font-weight: bold;
+                    text-transform: uppercase;
+                    margin-bottom: 20px;
+                }
+                .product-description {
+            background-color: #f9f9f9; /* Fond légèrement gris pour la différencier */
+            border-radius: 8px; /* Coins arrondis */
+            padding: 20px 30px; /* Espace intérieur pour un confort visuel */
+            margin: 20px 0; /* Espacement entre la section et les autres éléments */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre douce pour un effet moderne */
+        }
+        
+        .product-description h2 {
+            font-size: 24px; /* Taille de police du titre */
+            color: #f9651b; /* Couleur sombre pour un contraste élégant */
+            margin-bottom: 15px; /* Espacement sous le titre */
+            text-align: center; /* Centrer le titre */
+            font-family: 'Arial Black', sans-serif; /* Police stylée et moderne */
+        }
+        
+        .product-description p {
+            font-size: 16px; /* Taille standard pour la lecture */
+            line-height: 1.8; /* Espacement entre les lignes pour plus de confort */
+            color: #3d3a3a; /* Couleur légèrement plus douce que le noir pur */
+            text-align: justify; /* Justification du texte pour une apparence soignée */
+            font-family: 'Verdana', sans-serif; /* Police simple et claire */
+        }
+        
+        details {
+    margin-bottom: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+summary {
+    cursor: pointer;
+    padding: 15px;
+    font-size: 20px;
+    color: #d14d0c;
+    background: #f7f7f7;
+    border-bottom: 1px solid #ddd;
+    font-weight: bold;
+    outline: none;
+    display: flex;            /* Aligné horizontalement */
+    align-items: center;      /* Centré verticalement */
+}
+
+summary:hover {
+    background: #f2f2f2;
+}
+
+/* Masquer l'icône par défaut (détails classiques de la balise) */
+summary::-webkit-details-marker {
+    display: none;
+}
+
+/* Icône vers le bas (▼) */
+details summary::before {
+    content: '\f077'; /* Flèche vers le bas en utilisant Font Awesome */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    margin-right: 10px;
+    transition: transform 0.3s ease; /* Transition de rotation */
+}
+
+/* Icône vers le haut (▲) lorsque les détails sont ouverts */
+details[open] summary::before {
+    content: '\f078'; /* Flèche vers le haut en utilisant Font Awesome */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    margin-right: 10px;
+    transform: rotate(180deg); /* Rotation de 180° lorsqu'il est ouvert */
+}
+
+details p {
+    margin-top: 10px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+details[open] p {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+                details div {
+                    padding: 15px;
+                }
+                details div.grid {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                    gap: 20px;
+                }
+                .product-card {
+                    text-align: center;
+                    background-color: #fff;
+                    padding: 45px;
+                    border-radius: 15px;
+                    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+                    transition: transform 0.3s, box-shadow 0.3s;
+                }
+                .product-card:hover {
+                    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+                    transform: scale(1.05);
+                }
+                .product-card img {
+                    width: 100%;
+                    height: 100px;
+                    object-fit: fill;
+                    border-radius: 5px;
+                }
+                .product-card h4 {
+                    font-size: 18px;
+                    color: #d14d0c;
+                    margin: 10px 0;
+                }
+                .product-card p {
+                    font-size: 14px;
+                    color: #666;
+                    margin-bottom: 10px;
+                }
+                .product-card .price {
+                    font-weight: bold;
+                    color: #000;
+                    margin: 10px 0;
+                }
+                
+                .product-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        /* Conteneur des produits utilisant Flexbox pour organiser les cartes */
+.product-container {
+    display: flex;
+    flex-wrap: wrap; /* Les cartes se mettront automatiquement sur plusieurs lignes si nécessaire */
+    justify-content: space-between; /* Équilibrer l'espace entre les cartes */
+    gap: 20px; /* Espacement entre les cartes */
+}
+
+/* Carte de produit */
+.product-card {
+    flex: 1 1 200px; /* Les cartes se réajustent et occupent minimum 200px */
+    max-width: 300px; /* Largeur maximale pour les cartes */
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out; /* Transition lors des changements d'état */
+    margin: 10px; /* Marge entre les cartes */
+}
+
+/* Style pour les images des produits */
+.product-card img {
+    width: 100%; /* Faire en sorte que l'image prenne toute la largeur disponible */
+    height: auto; /* Conserver le ratio de l'image */
+    object-fit: contain; /* Éviter de déformer l'image */
+    max-width: 150px; /* Limiter la taille des images */
+    margin: 0 auto; /* Centrer l'image */
+    border-radius: 5px; /* Bordure arrondie pour l'image */
+}
+
+/* Class hidden pour cacher les éléments */
+.hidden {
+    display: none !important; /* Applique une visibilité 'none' avec un !important pour forcer son application */
+}
+
+/* Media Query pour appareils mobiles */
+@media (max-width: 768px) {
+    .product-card {
+        flex: 1 1 100%; /* Sur petits écrans, les cartes occupent toute la largeur */
+        max-width: 100%; /* Largeur maximale 100% */
+    }
+
+    .product-card img {
+        max-width: 120px; /* Réduire encore la taille de l'image sur petits écrans */
+    }
+}
+
+        
+        .product-card .add-to-cart {
+            margin-top: auto; /* Force le bouton à se placer tout en bas de la carte */
+            padding: 10px 20px;
+            background-color: #d14d0c;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .rating {
+    color: orange;
+    font-size: 20px; /* Ajustez la taille des étoiles si nécessaire */
+    margin: 10px 0;
+}
+     
+        
+                .product-card .add-to-cart:hover {
+                    background-color: #b13d0a;
+                    transform: scale(1.05);
+                }
+                footer {
+                    background-color: #333;
+                    color: #fff;
+                    text-align: center;
+                    padding: 10px;
+                    margin-top: 20px;
+                }
+                @media (max-width: 768px) {
+                    details div.grid {
+                        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                    }
+                }
+            </style>
+    <header>
+
+        <div class="logo-slogan">
+            <a href="index.html"> <!-- Lien vers la page d'accueil -->
+                <div class="logo">
+                    <img src="images/logo.png" alt="TechGearShop logo">
+                </div>
+            </a>
+            <!-- Nom de la boutique "TechGearShop" -->
+            <div class="shop-name">TechGearShop</div>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> Accueil</a></li>
+                <li><a href="produits.html"><i class="fas fa-shop"></i> Produits</a></li>
+                <li><a href="about.html"><i class="fas fa-info-circle"></i> À propos</a></li>
+                <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+        </nav>
+
+        <div class="search-container">
+            <div class="button-container">
+                <button class="btn" id="btn-connect">
+                    <i class="fas fa-user"></i> Se connecter
+                </button>
+                <button class="btn" id="btn-cart">
+                    <i class="fas fa-shopping-cart"></i> Panier
+                    <span class="cart-bubble" id="cart-count">0</span> <!-- Bulle de compteur -->
+                </button>
+                <button class="btn" id="btn-help">
+                    <i class="fas fa-question-circle"></i> Aide
+                </button>
+            </div>
+            <input type="text" placeholder="Rechercher des produits.." class="search-input">
+            <button class="search-button">
+                <i class="fas fa-search"></i> Rechercher
+            </button>
+            <div id="suggestions" class="suggestions-list"></div> <!-- Liste des suggestions -->
+</div>
+        </div>
+        </div>
+    </header>
+    <main>
+       
+            <h2>À propos de nos produits</h2>
+
+            <details>
+              <summary>Plus details sur nos produits</summary>
+              <p>
+                Chez TechGearShop, nous sélectionnons avec soin des produits de qualité pour répondre à tous vos besoins technologiques. 
+                Que vous soyez un gamer passionné, un professionnel exigeant ou un utilisateur en quête d'un bon rapport qualité-prix, 
+                notre gamme variée de smartphones, ordinateurs et accessoires est là pour vous satisfaire. 
+                Nous mettons un point d'honneur à proposer des prix compétitifs, tout en garantissant des articles fiables et performants.
+              </p>
+              <p>
+                Profitez de notre collection diversifiée incluant des moniteurs de haute définition, des accessoires pour gaming comme des claviers mécaniques ou des souris performantes, 
+                ainsi que les dernières générations de smartphones et ordinateurs portables. Votre satisfaction est notre priorité !
+              </p>
+            </details>
+            
+        
+        <!-- Smartphones -->
+        <details open>
+            <summary>Smartphones</summary>
+            <div class="grid">
+                <div class="product-card">
+                    <img src="images/iphone14pro.png" alt="iPhone 14 Pro">
+                    <h4>iPhone 14 Pro</h4>
+                    <p>Performance ultime, appareil photo inégalé. La connectivité à son meilleur.</p>
+                    <p>Écran Super Retina XDR de 6,1 pouces pour des visuels stupéfiants.</p>
+                    <p>Processeur A15 Bionic pour une vitesse exceptionnelle.</p>
+                    <p>Système de caméra avancé avec LiDAR pour des photos et vidéos incroyables.</p>
+                    <div class="price">750 000 FCFA</div>
+                    <button class="add-to-cart">Ajouter au panier</button>
+                </div>
+                
+                <div class="product-card">
+                    <img src="images/samsung_galaxy_s23.jpg" alt="Samsung Galaxy S23 Ultra">
+                    <h4>Samsung Galaxy S23 Ultra</h4>
+                    <p>Écran AMOLED haute résolution pour des couleurs éclatantes. Appareil photo 200 MP exceptionnel pour des détails saisissants.</p>
+                    <p>Processeur Snapdragon 8 Gen 1 pour des performances ultra-rapides.</p>
+                    <p>Batterie longue durée avec charge rapide.</p>
+                    <p>Technologie de refroidissement avancée pour éviter la surchauffe.</p>
+                    <div class="price">850 000 FCFA</div>
+                    <button class="add-to-cart">Ajouter au panier</button>
+                </div>
+                
+                <div class="product-card">
+                    <img src="images/redmagic7pro.jpg" alt="RedMagic 7 Pro">
+                    <h4>RedMagic 7 Pro</h4>
+                    <p>Smartphone gaming puissant avec système de refroidissement avancé.</p>
+                    <p>Écran AMOLED de 6,8 pouces pour une expérience visuelle immersive.</p>
+                    <p>Batterie de 5000 mAh pour des sessions de jeu prolongées.</p>
+                    <p>Processeur Snapdragon 8 Gen 1 pour une performance rapide.</p>
+                    <p>Système de caméra 64 MP pour des photos de qualité.</p>
+                    <div class="price">600 000 FCFA</div>
+                    <button class="add-to-cart">Ajouter au panier</button>
+                </div>
+                
+                <div class="product-card">
+                    <img src="images/tecno_phantom_x2_pro.png" alt="Tecno Phantom X2">
+                    <h4>Tecno Phantom X2</h4>
+                    <p>Performance ultime avec processeur MediaTek Dimensity 9000.</p>
+                    <p>Appareil photo 50 MP pour des captures détaillées.</p>
+                    <p>Écran AMOLED de 6,7 pouces pour des couleurs vives.</p>
+                    <p>Batterie longue durée avec charge rapide.</p>
+                    <p>Conception élégante avec finitions haut de gamme.</p>
+                    <div class="price">350 000 FCFA</div>
+                    <button class="add-to-cart">Ajouter au panier</button>
+                </div>
+                
+                <div class="product-card">
+                    <img src="images/tecno_pova_5_pro.jpg" alt="Tecno Pova 5 Pro">
+                    <h4>Tecno Pova 5 Pro</h4>
+                    <p>Smartphone puissant avec batterie de 7000 mAh pour une autonomie exceptionnelle.</p>
+                    <p>Écran LCD de 6,9 pouces pour des images nettes.</p>
+                    <p>Processeur MediaTek Helio G95 pour des performances fluides.</p>
+                    <p>Appareil photo 48 MP pour des photos de qualité.</p>
+                    <p>Design moderne avec des finitions élégantes.</p>
+                    <div class="price">190 000 FCFA</div>
+                    <button class="add-to-cart">Ajouter au panier</button>
+                </div>
+                
+                <div class="product-card">
+                    <img src="images/tecno_camon_30_pro_5g.jpg" alt="Tecno Camon 30 Pro 5G">
+                    <h4>Tecno Camon 30 Pro 5G</h4>
+                    <p>Connectivité 5G pour une navigation ultra-rapide.</p>
+                    <p>Appareil photo haute résolution de 64 MP.</p>
+                    <p>Écran AMOLED de 6,8 pouces pour des visuels vibrants.</p>
+                    <p>Batterie de 5000 mAh avec charge rapide.</p>
+                    <p>Design élégant avec des finitions modernes.</p>
+                    <div class="price">200 000 FCFA</div>
+                    <button class="add-to-cart">Ajouter au panier</button>
+                </div>
+                
+                <div class="product-card">
+                    <img src="images/tecno_phantom_v_fold.jpg" alt="Tecno Phantom V Fold">
+                    <h4>Tecno Phantom V Fold</h4>
+                    <p>Écran pliable innovant pour une expérience unique.</p>
+                    <p>Performance exceptionnelle avec processeur MediaTek Dimensity 9000.</p>
+                    <p>Appareil photo 50 MP pour des photos de haute qualité.</p>
+                    <p>Batterie longue durée avec charge rapide.</p>
+                    <p>Design élégant et moderne avec des finitions haut de gamme.</p>
+                    <div class="price">900 000 FCFA</div>
+                    <button class="add-to-cart">Ajouter au panier</button>
+                </div>
+                
+                <div class="product-card">
+                    <img src="images/huawei_mate_50_pro.png" alt="Huawei Mate 50 Pro">
+                    <h4>Huawei Mate 50 Pro</h4>
+                    <p>Appareil photo Leica pour des photos exceptionnelles.</p>
+                    <p>Design élégant avec finitions premium.</p>
+                    <p>Écran OLED de 6,74 pouces pour des couleurs éclatantes.</p>
+                    <p>Processeur Kirin 9000 pour des performances fluides.</p>
+                    <p>Batterie de 4400 mAh avec charge rapide et sans fil.</p>
+                    <div class="price">850 000 FCFA</div>
+                    <button class="add-to-cart">Ajouter au panier</button>
+                </div>
+                
+                <div class="product-card">
+                    <img src="images/huawei_y9a.jpg" alt="Huawei Y9a">
+                    <h4>Huawei Y9a</h4>
+                    <p>Smartphone abordable avec de bonnes performances.</p>
+                    <p>Appareil photo 64 MP pour des photos de qualité.</p>
+                    <p>Écran LCD de 6,63 pouces pour une bonne visibilité.</p>
+                    <p>Batterie de 4300 mAh avec charge rapide.</p>
+                    <p>Design moderne avec des finitions élégantes.</p>
+                    <div class="price">170 000 FCFA</div>
+                    <button class="add-to-cart">Ajouter au panier</button>
+                </div>
+                
+                <div class="product-card">
+                    <img src="images/huawei_nova_10_se.jpg" alt="Huawei Nova 10 SE">
+                    <h4>Huawei Nova 10 SE</h4>
+                    <p>Design moderne avec appareil photo 108 MP de qualité.</p>
+                    <p>Écran OLED de 6,67 pouces pour des couleurs éclatantes.</p>
+                    <p>Processeur Snapdragon 778G pour des performances rapides.</p>
+                    <p>Batterie de 4500 mAh avec charge rapide.</p>
+                    <p>Design élégant avec des finitions modernes.</p>
+                    <div class="price">200 000 FCFA</div>
+                    <button class="add-to-cart">Ajouter au panier</button>
+                </div>
+                
+                <div class="product-card">
+                    <img src="images/Huawei_p60_art.png" alt="Huawei P60 Art">
+                    <h4>Huawei P60 Art</h4>
+                    <p>Smartphone haut de gamme avec des fonctionnalités avancées.</p>
+                    <p>Appareil photo 50 MP pour des captures détaillées.</p>
+                    <p>Écran OLED de 6,67 pouces pour des visuels vibrants.</p>
+                    <p>Processeur Snapdragon 888 pour des performances rapides.</p>
+                    <p>Batterie de 4600 mAh avec charge rapide et sans fil.</p>
+                    <div class="price">1 000 000 FCFA</div>
+                    <button class="add-to-cart">Ajouter au panier</button>
+                </div>
+                
+                <div class="product-card">
+                    <img src="images/oneplus_10t_5g.png" alt="OnePlus 10T 5G">
+                    <h4>OnePlus 10T 5G</h4>
+                    <p>Performance rapide avec processeur Snapdragon 8 Gen 1.</p>
+                    <p>Connectivité 5G pour une navigation ultra-rapide.</p>
+                    <p>Écran Fluid AMOLED de 6,7 pouces pour des visuels fluides.</p>
+                    <p>Appareil photo 50 MP pour des photos de qualité.</p>
+                    <p>Batterie de 4800 mAh avec charge rapide.</p>
+                    <div class="price">430 000 FCFA</div>
+                    <button class="add-to-cart">Ajouter au panier</button>
+                </div>
+                
+                <div class="product-card">
+                    <img src="images/samsung_galaxy_z_fold_5.jpg" alt="Samsung Galaxy Z Fold 5">
+                    <h4>Samsung Galaxy Z Fold 5</h4>
+                    <p>Écran pliable innovant pour une expérience utilisateur unique.</p>
+                    <p>Performance exceptionnelle avec processeur Snapdragon 8 Gen 1.</p>
+                    <p>Appareil photo 50 MP pour des captures nettes et détaillées.</p>
+                    <p>Batterie longue durée avec charge rapide.</p>
+                    <div class="price">1 200 000 FCFA</div>
+                    <button class="add-to-cart">Ajouter au panier</button>
+                </div>
+                
+                <div class="product-card">
+                    <img src="images/samsung_galaxy_a54_5g.jpg" alt="Samsung Galaxy A54 5G">
+                    <h4>Samsung Galaxy A54 5G</h4>
+                    <p>Smartphone performant avec connectivité 5G pour des vitesses de téléchargement ultra-rapides.</p>
+                    <p>Écran AMOLED pour des couleurs vives et éclatantes.</p>
+                    <p>Appareil photo 48 MP pour des photos de qualité.</p>
+                    <p>Batterie longue durée pour une utilisation prolongée.</p>
+                    <div class="price">220 000 FCFA</div>
+                    <button class="add-to-cart">Ajouter au panier</button>
+                </div>
+                
+                <div class="product-card">
+                    <img src="images/Samsung_galaxy_note_20_ultra.jpg" alt="Samsung Galaxy Note 20 Ultra">
+                    <h4>Samsung Galaxy Note 20 Ultra</h4>
+                    <p>Smartphone haut de gamme avec des fonctionnalités avancées pour les professionnels.</p>
+                    <p>Écran AMOLED de 6,9 pouces pour des visuels impressionnants.</p>
+                    <p>Appareil photo 108 MP pour des détails incroyables.</p>
+                    <p>S Pen intégré pour une productivité accrue.</p>
+                    <div class="price">480 000 FCFA</div>
+                    <button class="add-to-cart">Ajouter au panier</button>
+                </div>
+                
+                <div class="product-card">
+                    <img src="images/iphone_13_mini.png" alt="iPhone 13 Mini">
+                    <h4>iPhone 13 Mini</h4>
+                    <p>Smartphone compact avec des performances exceptionnelles.</p>
+                    <p>Écran Super Retina XDR de 5,4 pouces.</p>
+                    <p>Processeur A15 Bionic pour une vitesse exceptionnelle.</p>
+                    <p>Appareil photo double 12 MP pour des photos et vidéos de haute qualité.</p>
+                    <div class="price">400 000 FCFA</div>
+                    <button class="add-to-cart">Ajouter au panier</button>
+                </div>
+                
+                <div class="product-card">
+                    <img src="images/iphone_xr.jpg" alt="iPhone XR">
+                    <h4>iPhone XR</h4>
+                    <p>Smartphone abordable avec de bonnes performances.</p>
+                    <p>Écran Liquid Retina de 6,1 pouces pour des couleurs vibrantes.</p>
+                    <p>Processeur A12 Bionic pour des performances fluides.</p>
+                    <p>Appareil photo 12 MP pour des photos et vidéos de qualité.</p>
+                    <div class="price">260 000 FCFA</div>
+                    <button class="add-to-cart">Ajouter au panier</button>
+                </div>
+                
+                <div class="product-card">
+                    <img src="images/iphone_se_2022.jpg" alt="iPhone SE (2022)">
+                    <h4>iPhone SE (2022)</h4>
+                    <p>Smartphone compact avec des performances exceptionnelles.</p>
+                    <p>Processeur A15 Bionic pour une rapidité impressionnante.</p>
+                    <p>Appareil photo 12 MP avec mode Portrait.</p>
+                    <p>Conception en verre et aluminium durable.</p>
+                    <div class="price">290 000 FCFA</div>
+                    <button class="add-to-cart">Ajouter au panier</button>
+                </div>
+                
+                <div class="product-card">
+                    <img src="images/iphone_12_pro_max.png" alt="iPhone 12 Pro Max">
+                    <h4>iPhone 12 Pro Max</h4>
+                    <p>Smartphone haut de gamme avec des fonctionnalités avancées.</p>
+                    <p>Écran Super Retina XDR de 6,7 pouces.</p>
+                    <p>Processeur A14 Bionic pour des performances rapides.</p>
+                    <p>Triple appareil photo 12 MP avec LiDAR.</p>
+                    <div class="price">580 000 FCFA</div>
+                    <button class="add-to-cart">Ajouter au panier</button>
+                </div>
+                
+                <div class="product-card">
+                    <img src="images/iphone_11.png" alt="iPhone 11">
+                    <h4>iPhone 11</h4>
+                    <p>Smartphone performant avec un excellent rapport qualité-prix.</p>
+                    <p>Écran Liquid Retina de 6,1 pouces.</p>
+                    <p>Processeur A13 Bionic pour des performances fluides.</p>
+                    <p>Double appareil photo 12 MP pour des photos et vidéos de qualité.</p>
+                    <div class="price">350 000 FCFA</div>
+                    <button class="add-to-cart">Ajouter au panier</button>
+                </div>
+                
+                
+                
+        </details>
+<!-- Accessoires -->
+<details open>
+    <summary>Accessoires</summary>
+    <div class="grid">
+        <div class="product-card">
+            <img src="images/airpods_pro.jpg" alt="AirPods Pro">
+            <h4>AirPods Pro</h4>
+            <p>Écouteurs sans fil avec réduction de bruit active.</p>
+            <p>Qualité sonore exceptionnelle et design confortable.</p>
+            <div class="price">15 000 FCFA</div>
+            <button class="add-to-cart">Ajouter au panier</button>
+        </div>
+
+        <div class="product-card">
+            <img src="images/airpods_max.jpg" alt="AirPods Max">
+            <h4>AirPods Max</h4>
+            <p>Casque sans fil avec réduction de bruit active.</p>
+            <p>Conception robuste pour une expérience audio immersive.</p>
+            <div class="price">40 000 FCFA</div>
+            <button class="add-to-cart">Ajouter au panier</button>
+        </div>
+
+        <div class="product-card">
+            <img src="images/bose_quietcomfort_45.jpg" alt="Bose QuietComfort 45">
+            <h4>Bose QuietComfort 45</h4>
+            <p>Casque sans fil avec réduction de bruit active.</p>
+            <p>Idéal pour le voyage et les environnements bruyants.</p>
+            <div class="price">50 000 FCFA</div>
+            <button class="add-to-cart">Ajouter au panier</button>
+        </div>
+
+        <div class="product-card">
+            <img src="images/sony_wh_1000xm4.jpg" alt="Sony WH-1000XM4">
+            <h4>Sony WH-1000XM4</h4>
+            <p>Casque sans fil avec réduction de bruit active.</p>
+            <p>Longue autonomie pour une écoute prolongée.</p>
+            <div class="price">53 000 FCFA</div>
+            <button class="add-to-cart">Ajouter au panier</button>
+        </div>
+
+        <div class="product-card">
+            <img src="images/anker_soundcore_life_q30.jpg" alt="Anker SoundCore Life Q30">
+            <h4>Anker SoundCore Life Q30</h4>
+            <p>Casque sans fil avec réduction de bruit active.</p>
+            <p>Excellent rapport qualité-prix pour les audiophiles.</p>
+            <div class="price">50 000 FCFA</div>
+            <button class="add-to-cart">Ajouter au panier</button>
+        </div>
+
+        <div class="product-card">
+            <img src="images/sony_wf_1000xm5.jpg" alt="Sony WF-1000XM5">
+            <h4>Sony WF-1000XM5</h4>
+            <p>Écouteurs sans fil avec réduction de bruit active.</p>
+            <p>Un son puissant avec une technologie de pointe.</p>
+            <div class="price">160 000 FCFA</div>
+            <button class="add-to-cart">Ajouter au panier</button>
+        </div>
+
+        <div class="product-card">
+            <img src="images/razer_blackwidow_v4_pro.jpg" alt="Clavier Razer BlackWidow V4 Pro">
+            <h4>Clavier Razer BlackWidow V4 Pro</h4>
+            <p>Clavier mécanique avec rétroéclairage RGB.</p>
+            <p>Idéal pour les gamers exigeants et les créateurs.</p>
+            <div class="price">90 000 FCFA</div>
+            <button class="add-to-cart">Ajouter au panier</button>
+        </div>
+
+        <div class="product-card">
+            <img src="images/corsair_k70_rgb.jpg" alt="Clavier Corsair K70 RGB">
+            <h4>Clavier mécanique Corsair K70 RGB</h4>
+            <p>Clavier mécanique avec rétroéclairage RGB.</p>
+            <p>Performance exceptionnelle pour la productivité et le jeu.</p>
+            <div class="price">85 000 FCFA</div>
+            <button class="add-to-cart">Ajouter au panier</button>
+        </div>
+
+        <div class="product-card">
+            <img src="images/lg_ultragear_34.jpg" alt="Écran LG UltraGear 34GP950G-B">
+            <h4>LG 34GP950G-B UltraGear</h4>
+            <p>Écran UltraWide pour gaming et création de contenu.</p>
+            <p>Profitez d'images immersives avec un écran 34 pouces.</p>
+            <div class="price">650 000 FCFA</div>
+            <button class="add-to-cart">Ajouter au panier</button>
+        </div>
+
+        <div class="product-card">
+            <img src="images/logitech_g640.jpg" alt="Tapis de Souris Logitech G640" class="product-img">
+            <h4>Tapis de Souris Logitech G640</h4>
+            <p>Idéal pour les joueurs, offrant une surface de contrôle uniforme et confortable.</p>
+            <p>Optimisé pour les capteurs des souris Logitech, pour une précision optimale.</p>
+            <div class="price">25 000 FCFA</div>
+            <button class="add-to-cart">Ajouter au panier</button>
+        </div>
+
+        <div class="product-card ps4-controller">
+            <img src="images/manette_ps4.jpg" alt="Manette PS4" class="product-img">
+            <h4>Manette PS4</h4>
+            <p>Manette sans fil officielle PS4 pour une expérience de jeu fluide et réactive.</p>
+            <p>Confort ergonomique, boutons réactifs et design moderne.</p>
+            <div class="price">39 000 FCFA</div>
+            <button class="add-to-cart">Ajouter au panier</button>
+        </div>
+        <div class="product-card ps5-controller">
+            <img src="images/manette_ps5.jpg" alt="Manette PS5" class="product-img">
+            <h4>Manette PS5</h4>
+            <p>Nouvelle manette PS5 avec retour haptique et gâchettes adaptatives pour une immersion totale.</p>
+            <p>Conçu pour offrir la meilleure expérience de jeu sur PlayStation 5.</p>
+            <div class="price">55 000 FCFA</div>
+            <button class="add-to-cart">Ajouter au panier</button>
+        </div>
+
+
+        <div class="product-card msi-monitor">
+            <img src="images/msi_monitor.jpg" alt="Moniteur MSI" class="product-img">
+            <h4>Moniteur MSI Optix MAG271C</h4>
+            <p>Moniteur incurvé de 27 pouces avec résolution 2560x1440 pour un confort visuel optimal.</p>
+            <p>Fréquence de rafraîchissement de 165Hz et temps de réponse ultra-rapide de 1 ms pour les jeux compétitifs.</p>
+            <div class="price">320 000 FCFA</div>
+            <button class="add-to-cart">Ajouter au panier</button>
+     </div>
+     <div class="product-card cooling-pad">
+        <img src="images/cooling_pad.jpg" alt="Support de refroidissement pour ordinateur portable" class="product-img">
+        <h4>Support de refroidissement ordinateur portable</h4>
+        <p>Un refroidisseur avec ventilation efficace pour maintenir votre laptop à une température optimale pendant de longues sessions.</p>
+        <p>Compact et silencieux, avec un design ergonomique pour un meilleur confort.</p>
+        <div class="price">30 000 FCFA</div>
+        <button class="add-to-cart">Ajouter au panier</button>
+    </div>
+    
+    <div class="product-card rgb-speaker">
+        <img src="images/rgb_speaker.jpg" alt="Enceinte RGB" class="product-img">
+        <h4>Enceinte RGB</h4>
+        <p>Une enceinte Bluetooth avec des lumières RGB, offrant une expérience sonore immersive et visuelle.</p>
+        <p>Puissante, avec une qualité sonore claire et des basses profondes. Idéale pour toutes vos fêtes et événements.</p>
+        <div class="price">50 000 FCFA</div>
+        <button class="add-to-cart">Ajouter au panier</button>
+    </div>
+    
+               
+    </div>
+</details>
+                        
+        </details>
+
+        <!-- Ordinateurs -->
+        <details open>
+            <summary>Ordinateurs</summary>
+            <div class="grid">
+                <div class="product-card">
+                    <img src="images/lenovo_legion5.jpg" alt="Lenovo Legion 5">
+                    <h4>Lenovo Legion 5</h4>
+                    <p>Conçu pour les gamers avec un design moderne et solide. Processeur puissant pour des performances fluides.</p>
+                    <p>Écran Full HD 144Hz pour des graphismes impeccables.</p>
+                    <p>Carte graphique NVIDIA pour des jeux immersifs. Système de refroidissement avancé pour éviter la surchauffe.</p>
+                    <div class="price">650 000 FCFA</div>
+                    <button class="add-to-cart">Ajouter au panier</button>
+                </div>
+                
+                <div class="product-card">
+                    <img src="images/hp_victus.jpg" alt="HP Victus 16">
+                    <h4>HP Victus 16</h4>
+                    <p>PC gamer avec carte graphique RTX 3060. Écran 144Hz pour une expérience de jeu immersive.</p>
+                    <p>Processeur rapide pour des performances élevées en multitâche.</p>
+                    <p>Conception élégante et robuste idéale pour les jeux et la productivité.</p>
+                    <div class="price">700 000 FCFA</div>
+                    <button class="add-to-cart">Ajouter au panier</button>
+                </div>
+                
+                <div class="product-card">
+                    <img src="images/lenovo_legion7i.jpg" alt="Lenovo Legion 7i">
+                    <h4>Lenovo Legion 7i (Gaming)</h4>
+                    <p>Conçu pour les gamers avec un design moderne et robuste. Performances de haut niveau avec processeur puissant.</p>
+                    <p>Écran haute résolution pour des détails visuels époustouflants.</p>
+                    <p>Technologie de refroidissement avancée pour un fonctionnement optimal même en plein jeu.</p>
+                    <div class="price">750 000 FCFA</div>
+                    <button class="add-to-cart">Ajouter au panier</button>
+                </div>
+                
+                <div class="product-card">
+                    <img src="images/dell_vostro_3510.jpg" alt="Dell Vostro 3510">
+                    <h4>Dell Vostro 3510 (Intel i5)</h4>
+                    <p>Ordinateur portable performant avec processeur Intel i5. Idéal pour les tâches quotidiennes et la productivité.</p>
+                    <p>Design élégant et léger pour une portabilité facile.</p>
+                    <p>Autonomie de batterie longue durée pour rester productif toute la journée.</p>
+                    <div class="price">310 000 FCFA</div>
+                    <button class="add-to-cart">Ajouter au panier</button>
+                </div>
+                
+                <div class="product-card">
+                    <img src="images/hp_chromebook_x360_14.jpg" alt="HP Chromebook x360 14">
+                    <h4>HP Chromebook x360 14</h4>
+                    <p>Ordinateur portable convertible avec Chrome OS pour une flexibilité maximale. Écran tactile pour une navigation intuitive.</p>
+                    <p>Design léger et compact pour une portabilité facile.</p>
+                    <p>Idéal pour le travail en déplacement avec une autonomie de batterie prolongée.</p>
+                    <div class="price">250 000 FCFA</div>
+                    <button class="add-to-cart">Ajouter au panier</button>
+                </div>
+                
+                <div class="product-card">
+                    <img src="images/asus_vivobook_15.jpg" alt="Asus VivoBook 15">
+                    <h4>Asus VivoBook 15 (Ryzen 5)</h4>
+                    <p>Ordinateur portable performant avec processeur Ryzen 5. Écran Full HD pour une clarté visuelle exceptionnelle.</p>
+                    <p>Stockage SSD rapide pour des temps de chargement réduits.</p>
+                    <p>Design élégant et moderne pour une utilisation quotidienne.</p>
+                    <div class="price">290 000 FCFA</div>
+                    <button class="add-to-cart">Ajouter au panier</button>
+                </div>
+                
+                <div class="product-card">
+                    <img src="images/acer_nitro_5.jpg" alt="Acer Nitro 5">
+                    <h4>Acer Nitro 5 (Gaming)</h4>
+                    <p>Ordinateur portable gaming avec des performances exceptionnelles. Carte graphique dédiée pour des jeux fluides.</p>
+                    <p>Écran haute résolution pour des graphismes incroyables.</p>
+                    <p>Système de refroidissement efficace pour des sessions de jeu prolongées.</p>
+                    <div class="price">600 000 FCFA</div>
+                    <button class="add-to-cart">Ajouter au panier</button>
+                </div>
+                
+                <div class="product-card">
+                    <img src="images/msi_gf63_thin.jpg" alt="MSI GF63 Thin">
+                    <h4>MSI GF63 Thin (Gaming)</h4>
+                    <p>Ordinateur portable gaming avec un design fin et léger. Performances élevées avec processeur puissant.</p>
+                    <p>Carte graphique NVIDIA pour des jeux immersifs.</p>
+                    <p>Système de refroidissement avancé pour des performances stables.</p>
+                    <div class="price">520 000 FCFA</div>
+                    <button class="add-to-cart">Ajouter au panier</button>
+                </div>
+                
+                <div class="product-card asus-rog">
+                    <img src="images/asus_rog.jpg.png" alt="Ordinateur ASUS ROG" class="product-img">
+                    <h4>Ordinateur ASUS ROG Strix G15</h4>
+                    <p>Un PC portable gaming puissant avec processeur Intel i7. Carte graphique NVIDIA RTX 3070 pour des performances exceptionnelles.</p>
+                    <p>Écran 144Hz pour des jeux fluides et immersifs.</p>
+                    <p>Design moderne et robuste pour les gamers les plus exigeants. Système de refroidissement avancé pour des sessions prolongées.</p>
+                    <div class="price">1 500 000 FCFA</div>
+                    <button class="add-to-cart">Ajouter au panier</button>
+                </div>
+                
+                <div class="product-card macbook">
+                    <img src="images/macbook.jpg" alt="MacBook Pro" class="product-img">
+                    <h4>MacBook Pro 16 pouces</h4>
+                    <p>Le MacBook Pro 16" avec processeur Apple M2 Pro, écran Retina et autonomie de batterie exceptionnelle.</p>
+                    <p>Un outil performant pour les créateurs de contenu et les professionnels.</p>
+                    <p>Design élégant et robuste avec une qualité de construction premium.</p>
+                    <p>Grande capacité de stockage et options de mémoire avancées.</p>
+                    <div class="price">2 200 000 FCFA</div>
+                    <button class="add-to-cart">Ajouter au panier</button>
+                </div>
+                
+                <div class="product-card imac">
+                    <img src="images/imac.jpg" alt="iMac 24 pouces" class="product-img">
+                    <h4>iMac 24 pouces avec puce M1</h4>
+                    <p>Un iMac ultrafin de 24 pouces avec écran 4.5K. Puce Apple M1 pour des performances fluides.</p>
+                    <p>Idéal pour le travail créatif et la productivité avec des graphismes éclatants.</p>
+                    <p>Design élégant et une gamme de couleurs pour s’adapter à tout type de bureau.</p>
+                    <p>Son de haute qualité pour des expériences multimédias immersives.</p>
+                    <div class="price">1 750 000 FCFA</div>
+                    <button class="add-to-cart">Ajouter au panier</button>
+                </div>
+                <div class="product-card">
+                    <img src="images/odyss3y_gaming_pc.jpg" alt="Odyss3y Gaming PC">
+                    <h4>RGB CustomPC - Odyss3y Gaming PC</h4>
+                    <p>PC gamer avec processeur AMD Ryzen 5 5600X.</p>
+                    <p>Carte graphique NVIDIA RTX 3050 6GB pour des performances exceptionnelles.</p>
+                    <p>16 Go (2x8 Go) DDR4-3600 RGB RAM pour un multitâche fluide.</p>
+                    <p>SSD de 1 To pour des chargements rapides.</p>
+                    <p>Éclairage RGB complet et personnalisable pour un look époustouflant.</p>
+                    <div class="price">1 199 000 FCFA</div>
+                    <button class="add-to-cart">Ajouter au panier</button>
+                </div>
+                
+                <div class="product-card">
+                    <img src="images/titan_gaming_pc.jpg" alt="Titan Gaming PC">
+                    <h4>Xidax - Titan Gaming PC</h4>
+                    <p>PC gamer avec processeur Intel Core i5-14600K.</p>
+                    <p>Carte graphique NVIDIA RTX 4060 pour des graphismes ultra-réalistes.</p>
+                    <p>32 Go Corsair Vengeance RGB DDR5 RAM pour une capacité multitâche exceptionnelle.</p>
+                    <p>Stockage hybride avec SSD de 2 To et HDD de 4 To pour une grande capacité de stockage.</p>
+                    <p>Éclairage RGB complet et personnalisable pour un look époustouflant.</p>
+                    <div class="price">2 299 000 FCFA</div>
+                    <button class="add-to-cart">Ajouter au panier</button>
+                </div>
+                
+                    <div class="product-card">
+                        <img src="images/alienware_aurora_r12.jpg" alt="Alienware Aurora R12">
+                        <h4>Alienware Aurora R12</h4>
+                        <p>PC gamer puissant avec processeur Intel i9. Carte graphique NVIDIA RTX 3080 pour des performances exceptionnelles.</p>
+                        <p>Design futuriste avec éclairage RGB personnalisable.</p>
+                        <p>Système de refroidissement avancé pour éviter la surchauffe.</p>
+                        <p>Idéal pour les jeux en haute résolution et la réalité virtuelle.</p>
+                        <div class="price">2 500 000 FCFA</div>
+                        <button class="add-to-cart">Ajouter au panier</button>
+                    </div>
+                
+                    <div class="product-card">
+                        <img src="images/hp_omen_30l.png" alt="HP Omen 30L">
+                        <h4>HP Omen 30L</h4>
+                        <p>PC gamer élégant avec processeur AMD Ryzen 9 et carte graphique NVIDIA RTX 3070.</p>
+                        <p>Éclairage RGB personnalisable pour un look stylé.</p>
+                        <p>Système de refroidissement liquide pour des performances optimales.</p>
+                        <p>32 Go de RAM pour le multitâche intensif et les jeux exigeants.</p>
+                        <div class="price">2 200 000 FCFA</div>
+                        <button class="add-to-cart">Ajouter au panier</button>
+                    </div>
+                
+                    <div class="product-card">
+                        <img src="images/asus_rog_strix_g15dk.jpg" alt="ASUS ROG Strix G15DK">
+                        <h4>ASUS ROG Strix G15DK</h4>
+                        <p>PC gamer puissant avec processeur AMD Ryzen 7 et carte graphique NVIDIA RTX 3060.</p>
+                        <p>Design compact avec éclairage LED RGB.</p>
+                        <p>16 Go de RAM et SSD de 512 Go pour des performances rapides.</p>
+                        <p>Système de refroidissement efficace pour des sessions de jeu prolongées.</p>
+                        <div class="price">1 900 000 FCFA</div>
+                        <button class="add-to-cart">Ajouter au panier</button>
+                    </div>
+                
+            
+                    </div>
+                </body>
+                
+             
+        </details>
+    </main>
+    <footer>
+        <div class="footer-info">
+            <div class="footer-links">
+                <h4>Liens Utiles</h4>
+                <ul>
+                    <li><i class="fas fa-file-contract"></i> <a href="#">Conditions générales de vente</a></li>
+                    <li><i class="fas fa-user-shield"></i> <a href="#">Politique de confidentialité</a></li>
+                    <li><i class="fas fa-undo"></i> <a href="#">Retour et échanges</a></li>
+                </ul>
+                
+            </div>
+            <div class="footer-payment">
+                <h4>Modes de Paiement</h4>
+                <ul id="footer-payment">
+                    <li><img src="images/visa.png"><span>Visa</span></li>
+                    <li><img src="images/orange-money.png"><span>Orange Money</span></li>
+                    <li><img src="images/mastercard.png"><span>MasterCard</span></li>
+                    <li><img src="images/wave.jpg"><span>Wave</span></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact</h4>
+                <ul><ul>
+                    <li id="phone"><i class="fas fa-phone-alt"></i> <a href="tel:+221339021942">+221 33 902 19 42</a></li>
+                    <li id="location"><i class="fas fa-map-marker-alt"></i> <a href="https://www.google.com/maps/search/Dakar,+Sénégal" target="_blank">Dakar, Sénégal</a></li>  
+                    <li id="mailto"><i class="fas fa-envelope"></i> <a href="mailto:contact@techgearshop.com">contact@techgearshop.com</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="social-links">
+        <h4>Réseaux Sociaux</h4>
+        <ul class="social-links">
+            <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
+            <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
+            <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+            <li><a href="#"><i class="fab fa-whatsapp"></i> Whatsapp</a></li>
+        </ul>
+        </div>
+        <p> <p><i class="fas fa-copyright"></i> 2024 TechGearShop. Tous droits réservés.</p> 
+        <p>Votre boutique en ligne de confiance pour tous vos accessoires informatiques.</p>
+        <p>Nous proposons des produits de qualité à des prix imbattables.</p>
+        <p>TechGearShop : où la technologie rencontre l'excellence.</p></p>
+    </footer>
+    <script>
+// Sélectionner les éléments de la barre de recherche et la liste des produits
+const searchInput = document.querySelector('.search-input');
+const productCards = document.querySelectorAll('.product-card');
+
+// Fonction pour filtrer les produits en fonction de la recherche
+function filterProducts() {
+    const searchQuery = searchInput.value.toLowerCase();
+
+    productCards.forEach(product => {
+        const productName = product.querySelector('h4').textContent.toLowerCase();
+        const productDescription = product.querySelector('p').textContent.toLowerCase();
+
+        // Vérifier si le nom ou la description du produit correspond à la recherche
+        if (productName.includes(searchQuery) || productDescription.includes(searchQuery)) {
+            product.style.display = 'block'; // Garder l'affichage du produit
+            product.classList.remove('hidden'); // Enlever la classe cachée si elle est présente
+        } else {
+            product.style.display = 'none'; // Cacher le produit si il ne correspond pas
+            product.classList.add('hidden'); // Ajouter une classe cachée si elle est présente
+        }
+    });
+}
+
+// Écouteur d'événement pour détecter les changements dans la barre de recherche
+searchInput.addEventListener('input', filterProducts);
+
+
+    </script>
+    </body>
+    <script src="global-cart-script"></script>
+    <script>
+        // Fonction pour ajouter un produit au panier
+        function addToCart(productName, productPrice) {
+            // Récupérer le panier actuel du stockage local
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    
+            // Ajouter le nouveau produit au panier
+            cart.push({ name: productName, price: productPrice });
+    
+            // Enregistrer le panier mis à jour dans le stockage local
+            localStorage.setItem('cart', JSON.stringify(cart));
+    
+            // Afficher un message de confirmation
+            alert(productName + ' a été ajouté au panier.');
+        }
+    
+        // Ajouter des écouteurs d'événements aux boutons "Ajouter au panier"
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', function() {
+                const productCard = this.closest('.product-card');
+                const productName = productCard.querySelector('h4').innerText;
+                const productPrice = productCard.querySelector('.price').innerText;
+    
+                addToCart(productName, productPrice);
+            });
+        });
+          // Fonction pour générer les étoiles en fonction de la note (5 étoiles pour tous)
+          function addStarRating() {
+            const products = document.querySelectorAll('.product-card');
+            
+            products.forEach(product => {
+                const ratingContainer = document.createElement('div');
+                ratingContainer.classList.add('rating');
+                ratingContainer.innerHTML = generateStars(5); // Note statique de 5 étoiles pour tous les produits
+
+                // Ajoute la notation avant le prix
+                const priceElement = product.querySelector('.price');
+                if (priceElement) {
+                    product.insertBefore(ratingContainer, priceElement); // Ajouter les étoiles juste avant le prix
+                }
+            });
+        }
+
+        // Fonction pour générer les étoiles en HTML pour 5 étoiles
+        function generateStars(rating) {
+            let stars = '';
+            for (let i = 1; i <= 5; i++) {
+                stars += '<span class="star filled"></span>'; // Remplir toutes les étoiles
+            }
+            return stars;
+        }
+
+        // Ajouter les étoiles à chaque produit dès que la page est chargée
+        window.onload = addStarRating;
+    document.addEventListener("DOMContentLoaded", function() {
+        var productCards = document.querySelectorAll('.product-card');
+        productCards.forEach(function(card) {
+            var ratingDiv = document.createElement('div');
+            ratingDiv.classList.add('rating');
+            ratingDiv.innerHTML = '&#9733; &#9733; &#9733; &#9733; &#9733;'; // 5 étoiles en orange
+            card.insertBefore(ratingDiv, card.querySelector('.price'));
+        });
+    });
+
+    
+    </script>
+    
+     <!-- Lier le fichier JavaScript externe -->
+  <script src="script.js"></script>
+    </html>
+    

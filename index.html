@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechGearShop - Accueil</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+      
+    <header>
+        <div class="logo-slogan">
+            <a href="index.html"> <!-- Lien vers la page d'accueil -->
+                <div class="logo">
+                    <img src="images/logo.png" alt="TechGearShop logo">
+                </div>
+            </a>
+            <!-- Nom de la boutique "TechGearShop" -->
+            <div class="shop-name">TechGearShop</div>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> Accueil</a></li>
+                <li><a href="produits.html"><i class="fas fa-shop"></i> Produits</a></li>
+                <li><a href="about.html"><i class="fas fa-info-circle"></i> À propos</a></li>
+                <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+        </nav>
+
+        <div class="search-container">
+            <div class="button-container">
+                <button class="btn" id="btn-connect">
+                    <i class="fas fa-user"></i> Se connecter
+                </button>
+                <button class="btn" id="btn-cart">
+                    <i class="fas fa-shopping-cart"></i> Panier
+                    <span class="cart-bubble" id="cart-count">0</span> <!-- Bulle de compteur -->
+                </button>
+                <button class="btn" id="btn-help">
+                    <i class="fas fa-question-circle"></i> Aide
+                </button>
+            </div>
+        
+            </div>
+        </div>
+    </header>
+
+    <section class="hero" style="position: relative;">
+        <div style="position: relative; width: 100%; height: 0; padding-top: 56.2225%; padding-bottom: 0; 
+                     box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; 
+                     overflow: hidden; border-radius: 8px; will-change: transform;">
+            <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; 
+                          border: none; padding: 0; margin: 0;"
+                    src="https://www.canva.com/design/DAGZ4Ip6tW0/_ZRcgC1EpqgzIvTdYwi6bw/view?embed" 
+                    allowfullscreen="allowfullscreen" allow="fullscreen">
+            </iframe>
+        </div>
+
+        <!-- Bouton centré au bas de la bannière -->
+        <div class="banner-button" style="position: absolute; bottom: 10%; left: 50%; transform: translateX(-50%);">
+            <a href="produits.html" class="btn-hero">
+                <i class="fa    fa-shopping-cart"></i>Voir nos produits</a>
+        </div>
+    </section>
+
+    <main>
+        <section class="categories">
+            <h3><strong>Nos Catégories Populaires</strong></h3>
+            <p>
+                Découvrez notre sélection diverse de produits, méticuleusement organisés en catégories pour satisfaire toutes vos attentes. 
+                Que vous soyez à la recherche d’un smartphone dernière génération, d’un ordinateur haute performance ou d’accessoires essentiels, 
+                nous avons tout ce qu’il vous faut pour enrichir votre expérience technologique au quotidien. 
+                Explorez nos produits aux designs innovants et à la qualité irréprochable, spécialement choisis pour répondre à vos besoins professionnels, créatifs et récréatifs. 
+                Chaque catégorie vous offre une expérience unique, avec des options pour tous les budgets. 
+                N’attendez plus pour trouver l’équipement qui fera passer votre quotidien numérique au niveau supérieur !
+            </p>
+            
+            <div class="category">
+                <a href="produits.html">
+                <img src="images/phone.jpg" alt="Téléphones">
+                <h4>Téléphones</h4>
+                <p>Découvrez les derniers smartphones, alliant performance de pointe et fiabilité exceptionnelle, conçus pour vous offrir une connectivité optimale et une expérience sans faille dans le monde numérique moderne.</p>
+            </div>
+            <div class="category">
+                <a href="produits.html">
+                <img src="images/laptop.jpg" alt="Ordinateurs">
+                <h4>Ordinateurs</h4>
+                <p>Des ordinateurs puissants et fiables, idéaux pour travailler, créer et jouer. 
+                Profitez de performances exceptionnelles et d'une sécurité renforcée pour une expérience fluide et sans compromis, que ce soit pour vos projets professionnels ou vos loisirs.</p>
+            </div>
+            <div class="category">
+                <a href="produits.html">
+                <img src="images/accessories.jpg" alt="Accessoires">
+                <h4>Accessoires</h4>
+                <p>Tous les accessoires essentiels pour compléter votre setup : claviers, souris, casques et bien plus encore, à des prix compétitifs. Trouvez tout ce qu'il vous faut pour une expérience numérique optimale et confortable.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-info">
+            <div class="footer-links">
+                <h4>Liens Utiles</h4>
+                <ul>
+                    <li><i class="fas fa-file-contract"></i> <a href="#">Conditions générales de vente</a></li>
+                    <li><i class="fas fa-user-shield"></i> <a href="#">Politique de confidentialité</a></li>
+                    <li><i class="fas fa-undo"></i> <a href="#">Retour et échanges</a></li>
+                </ul>
+                
+            </div>
+            <div class="footer-payment">
+                <h4>Modes de Paiement</h4>
+                <ul id="footer-payment">
+                    <li><img src="images/visa.png"><span>Visa</span></li>
+                    <li><img src="images/orange-money.png"><span>Orange Money</span></li>
+                    <li><img src="images/mastercard.png"><span>MasterCard</span></li>
+                    <li><img src="images/wave.jpg"><span>Wave</span></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact</h4>
+                <ul><ul>
+                    <li id="phone"><i class="fas fa-phone-alt"></i> <a href="tel:+221339021942">+221 33 902 19 42</a></li>
+                    <li id="location"><i class="fas fa-map-marker-alt"></i> <a href="https://www.google.com/maps/search/Dakar,+Sénégal" target="_blank">Dakar, Sénégal</a></li>  
+                    <li id="mailto"><i class="fas fa-envelope"></i> <a href="mailto:contact@techgearshop.com">contact@techgearshop.com</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="social-links">
+        <h4>Réseaux Sociaux</h4>
+        <ul class="social-links">
+            <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
+            <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
+            <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+            <li><a href="#"><i class="fab fa-whatsapp"></i> Whatsapp</a></li>
+        </ul>
+        </div>
+        <p> <p><i class="fas fa-copyright"></i> 2024 TechGearShop. Tous droits réservés.</p> 
+        <p>Votre boutique en ligne de confiance pour tous vos accessoires informatiques.</p>
+        <p>Nous proposons des produits de qualité à des prix imbattables.</p>
+        <p>TechGearShop : où la technologie rencontre l'excellence.</p></p>
+    </footer>
+
+</body>
+<script>
+    // Redirections vers d'autres pages
+document.getElementById('btn-connect').addEventListener('click', () => {
+    window.location.href = 'login.html';
+});
+
+document.getElementById('btn-cart').addEventListener('click', () => {
+    window.location.href = 'cart.html';
+});
+
+document.getElementById('btn-help').addEventListener('click', () => {
+    window.location.href = 'help.html';
+});
+
+if (document.querySelector('.btn-back')) {
+    document.querySelector('.btn-back').addEventListener('click', () => {
+        if (window.history.length > 1) {
+            window.history.back();
+        } else {
+            window.location.href = 'index.html';
+        }
+    });
+}
+    // Fonction pour mettre à jour la bulle avec le contenu réel du panier
+    function updateCartBubble() {
+        const cartBubble = document.getElementById('cart-count');
+        const cart = JSON.parse(localStorage.getItem('cart')) || []; // Récupérer le panier du localStorage
+        cartBubble.textContent = cart.length; // Afficher le nombre d'articles
+    }
+    
+    // Fonction pour ajouter un produit au panier
+    function addToCart(productName, productPrice) {
+        const cart = JSON.parse(localStorage.getItem('cart')) || []; // Charger le panier
+        cart.push({ name: productName, price: productPrice }); // Ajouter le produit
+        localStorage.setItem('cart', JSON.stringify(cart)); // Sauvegarder dans localStorage
+        updateCartBubble(); // Mettre à jour la bulle
+        alert(`${productName} a été ajouté au panier.`);
+    }
+    
+    // Fonction pour afficher les produits du panier
+    function displayCart() {
+        const cart = JSON.parse(localStorage.getItem('cart')) || []; // Charger le panier
+        const cartContainer = document.getElementById('cart-container');
+        const emptyCartMessage = document.getElementById('empty-cart-message');
+        const shopButton = document.getElementById('shop-button');
+        const totalPriceElement = document.getElementById('total-price');
+    
+        // Réinitialiser le contenu de la liste du panier
+        cartContainer.innerHTML = '';
+        if (cart.length === 0) {
+            emptyCartMessage.style.display = 'block';
+            shopButton.innerText = 'Commencez Vos Achats';
+            totalPriceElement.style.display = 'none';
+        } else {
+            emptyCartMessage.style.display = 'none';
+            shopButton.innerText = 'Commandez Vos Produits';
+            totalPriceElement.style.display = 'block';
+    
+            let totalPrice = 0;
+    
+            cart.forEach((product, index) => {
+                const productElement = document.createElement('div');
+                productElement.classList.add('cart-item');
+                productElement.innerHTML = `
+                    <h4>${product.name}</h4>
+                    <p>${product.price}</p>
+                    <button onclick="removeFromCart(${index})">Supprimer</button>
+                `;
+                cartContainer.appendChild(productElement);
+    
+                const price = parseFloat(product.price.replace(/[^\d.-]/g, ''));
+                totalPrice += price;
+            });
+    
+            totalPriceElement.innerText = `Total: ${totalPrice.toLocaleString()} FCFA`;
+        }
+    
+        updateCartBubble(); // Mise à jour après modification
+    }
+    
+    
+    
+    // Initialiser le panier et la bulle au chargement de la page
+    window.onload = () => {
+        updateCartBubble(); // Mettre à jour la bulle avec le nombre d'articles dans le panier
+    };
+    
+
+    
+    </script>
+  <!-- Lier le fichier JavaScript externe -->
+  <script src="script.js"></script>
+</html>

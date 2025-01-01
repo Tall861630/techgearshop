@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Créer un compte - TechGearShop</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .register-container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .register-container header {
+            display: flex;
+            justify-content: center; /* Centrer le logo */
+            align-items: center;
+            margin-bottom: 20px;
+            position: relative; /* Pour gérer la position du bouton "Retour" */
+        }
+
+        .back-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: #333;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-decoration: none; /* Supprimer le soulignement */
+        }
+        .back-button:hover {
+            background-color: #555;
+        }
+
+        .logo img {
+            width: 100px;
+            height: 100px;
+        }
+
+        h1 {
+            font-size: 22px;
+            color: #ff6600;
+            margin: 10px 0;
+        }
+
+        p {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .register-form {
+            margin: 20px 0;
+        }
+
+        .register-form label {
+            font-size: 14px;
+            color: #333;
+            display: block;
+            text-align: left;
+            margin-bottom: 5px;
+        }
+
+        .register-form input {
+            width: 100%;
+            padding: 10px;
+            font-size: 14px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .btn-orange {
+            background-color: #ff6600;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .btn-orange:hover {
+            background-color: #e65c00;
+        }
+
+        .terms {
+            font-size: 12px;
+            color: #999;
+            margin: 10px 0;
+        }
+
+        .terms a {
+            color: #ff6600;
+            text-decoration: none;
+        }
+
+        footer {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #666;
+        }
+
+        .footer-logo img {
+            width: 60px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="register-container">
+        <header>
+            <!-- Le bouton Retour en haut à gauche -->
+            <a href="#" class="back-button" onclick="window.history.back();">Retour</a>
+            <div class="logo">
+                <img src="images/logo.png" alt="Logo">
+            </div>
+        </header>
+        <h1>Créer un compte</h1>
+        <p>Remplissez les informations ci-dessous pour créer un compte TechGearShop.</p>
+        <form action="#" class="register-form">
+            <label for="name">Nom complet*</label>
+            <input type="text" id="name" placeholder="Nom complet*">
+            <label for="email">Adresse email*</label>
+            <input type="email" id="email" placeholder="Adresse email*">
+            <label for="password">Mot de passe*</label>
+            <input type="password" id="password" placeholder="Mot de passe*">
+            <label for="confirm-password">Confirmer le mot de passe*</label>
+            <input type="password" id="confirm-password" placeholder="Confirmer le mot de passe*">
+            <button type="submit" class="btn-orange">Créer un compte</button>
+        </form>
+        <p class="terms">
+            En continuant, vous acceptez les <a href="#">conditions d'utilisation</a> de TechGearShop.
+        </p>
+        <footer>
+            <p>Si besoin d'aide, merci de vous référer au Centre d'Assistance ou de contacter notre service client.</p>
+            <div class="footer-logo">
+                <img src="images/logo.png" alt="TechGearShop">
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Ajout d'une redirection lorsque l'utilisateur clique sur le bouton 'Retour'
+        document.querySelector('.back-button').addEventListener('click', function (e) {
+            e.preventDefault(); // Empêche le comportement par défaut du lien
+            window.history.back();
+        });
+    </script>
+</body>
+</html>

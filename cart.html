@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panier - TechGear Shop</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        body:hover {
+            background-color: #e0e0e0;
+            color: #000;
+        }
+
+        .container {
+            text-align: center;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+            max-width: 600px;
+            width: 100%;
+            overflow-y: auto;
+            max-height: 90vh;
+        }
+
+        header h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #ffffff;
+            background-color: #ff7f00;
+            padding: 10px;
+            border: 1px solid #040301;
+            border-radius: 5px;
+            display: inline-block;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        header h1:hover {
+            background-color: #e66b00;
+        }
+
+        .cart-icon img {
+            width: 120px;
+            height: 120px;
+        }
+
+        .empty-cart-message {
+            font-size: 18px;
+            margin: 20px 0;
+        }
+
+        .browse-message {
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
+
+        .shop-button {
+            background-color: #ff7f00;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .shop-button:hover {
+            background-color: #e66b00;
+        }
+
+        .back-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: #333;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-decoration: none;
+        }
+
+        .back-button:hover {
+            background-color: #555;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .cart-item h4 {
+            margin: 0;
+            font-size: 18px;
+        }
+
+        .cart-item p {
+            margin: 0;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .cart-item button {
+            background-color: #e66b00;;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .cart-item button:hover {
+            background-color: #cc0000;
+        }
+
+        .total-price {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        .additional-content {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button class="back-button" onclick="window.history.back()" aria-label="Retour à la page précédente">Retour</button>
+        <header>
+            <h1>Panier</h1>
+        </header>
+        <main>
+            <div class="cart-icon">
+                <img src="images/shopping-cart-icon.png" alt="Shopping Cart Icon">
+            </div>
+            <div id="cart-container"></div>
+            <p class="empty-cart-message" id="empty-cart-message">Votre panier est vide!</p>
+            <p class="browse-message">Parcourez nos catégories et découvrez nos meilleures offres!</p>
+            <button class="shop-button" id="shop-button" onclick="window.location.href='produits.html'">Commencez Vos Achats</button>
+            <div class="total-price" id="total-price"></div>
+            <div class="additional-content">
+                <p>Chez TechGear Shop, nous nous engageons à vous offrir les meilleurs produits technologiques du marché. Que vous soyez à la recherche des derniers smartphones, des ordinateurs les plus performants ou des accessoires indispensables, nous avons tout ce qu'il vous faut.</p>
+                <p>Nos produits sont soigneusement sélectionnés pour leur qualité et leur fiabilité, afin de garantir une expérience utilisateur optimale. Profitez de nos offres exclusives et de nos promotions exceptionnelles pour obtenir le meilleur rapport qualité-prix.</p>
+                <p>Notre équipe est à votre disposition pour vous conseiller et vous aider à faire le meilleur choix. N'hésitez pas à nous contacter pour toute question ou besoin d'assistance. Nous sommes là pour vous aider à trouver les produits qui correspondent parfaitement à vos besoins.</p>
+                <p>Merci de faire confiance à TechGear Shop pour tous vos besoins technologiques. Nous espérons que vous apprécierez votre expérience d'achat avec nous!</p>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
+
+<script>
+// Function to display the cart
+function displayCart() {
+    // Retrieve the cart from localStorage
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    // Elements where we will display the cart items and the total
+    const cartContainer = document.getElementById('cart-container');
+    const emptyCartMessage = document.getElementById('empty-cart-message');
+    const shopButton = document.getElementById('shop-button');
+    const totalPriceElement = document.getElementById('total-price');
+
+    // Clear existing cart items
+    cartContainer.innerHTML = '';
+
+    if (cart.length === 0) {
+        // Display empty cart message
+        emptyCartMessage.style.display = 'block';
+        shopButton.innerText = 'Commencez Vos Achats';
+        totalPriceElement.style.display = 'none';
+    } else {
+        // Hide empty cart message
+        emptyCartMessage.style.display = 'none';
+        shopButton.innerText = 'Commandez Vos Produits';
+        totalPriceElement.style.display = 'block';
+
+        let totalPrice = 0;
+
+        cart.forEach(product => {
+            const productElement = document.createElement('div');
+            productElement.classList.add('cart-item');
+
+            // Create product display and remove button
+            productElement.innerHTML = `
+                <h4>${product.name}</h4>
+                <p>${product.price}</p>
+                <button onclick="removeFromCart('${product.name}')">Supprimer</button>
+            `;
+            cartContainer.appendChild(productElement);
+
+            // Update total price
+            const price = parseFloat(product.price.replace(/[^\d.-]/g, ''));
+            totalPrice += price;
+        });
+
+        // Display the total price
+        totalPriceElement.innerText = `Total: ${totalPrice.toLocaleString()} FCFA`;
+    }
+}
+
+// Remove a product from the cart
+function removeFromCart(productName) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cart = cart.filter(product => product.name !== productName);
+    localStorage.setItem('cart', JSON.stringify(cart));
+    displayCart(); // Re-render the cart after removing an item
+}
+
+// Call the displayCart function when the page loads
+window.onload = displayCart;
+</script>

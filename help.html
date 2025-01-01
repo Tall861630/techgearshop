@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aide - TechGear Shop</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;  /* Utilise min-height pour assurer un centrage vertical sans forcer la taille */
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        body:hover {
+            background-color: #e0e0e0;
+            color: #000;
+        }
+
+        .help-container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 600px;
+            text-align: center;
+            overflow: hidden; /* Empêche le dépassement de contenu en cas d'excès */
+            border-radius: 10px;
+            max-height: 90vh;  /* Hauteur maximale de la page pour éviter le débordement */
+            overflow-y: auto;
+        }
+
+        .help-container header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .back-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: #333;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-decoration: none;
+        }
+
+        .back-button:hover {
+            background-color: #555;
+        }
+
+        .logo img {
+            width: 100px;
+            height: 100px;
+        }
+
+        h1 {
+            font-size: 22px;
+            color: #ff6600;
+            margin: 10px 0;
+        }
+
+        p {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .help-content {
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        .help-content h2 {
+            font-size: 18px;
+            color: #ff6600;
+            margin-bottom: 10px;
+        }
+
+        .help-content p {
+            margin-bottom: 10px;
+        }
+
+        .help-content ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        .help-content ul li {
+            margin-bottom: 10px;
+        }
+
+        footer {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #666;
+        }
+
+        .footer-logo img {
+            width: 60px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="help-container">
+        <header>
+            <!-- Le bouton Retour en haut à gauche -->
+            <a href="#" class="back-button" onclick="window.history.back();">Retour</a>
+            <div class="logo">
+                <img src="images/logo.png" alt="Logo">
+            </div>
+        </header>
+        <h1>Centre d'Aide</h1>
+        <div class="help-content">
+            <h2>Questions Fréquemment Posées</h2>
+            <p>Voici quelques-unes des questions les plus fréquemment posées par nos utilisateurs :</p>
+            <ul>
+                <li><strong>Comment puis-je créer un compte ?</strong> Pour créer un compte, cliquez sur le bouton "Créer un compte" et remplissez les informations requises.</li>
+                <li><strong>Comment puis-je passer une commande ?</strong> Pour passer une commande, ajoutez les produits à votre panier et suivez les instructions de paiement.</li>
+                <li><strong>Quels modes de paiement acceptez-vous ?</strong> Nous acceptons les cartes de crédit, PayPal, et d'autres méthodes de paiement sécurisées.</li>
+                <li><strong>Comment puis-je suivre ma commande ?</strong> Vous pouvez suivre votre commande en vous connectant à votre compte et en accédant à la section "Mes commandes".</li>
+                <li><strong>Comment puis-je retourner un produit ?</strong> Pour retourner un produit, veuillez consulter notre politique de retour et suivre les instructions fournies.</li>
+            </ul>
+            <h2>Contactez-nous</h2>
+            <p>Si vous avez d'autres questions ou besoin d'assistance, n'hésitez pas à nous contacter :</p>
+            <ul>
+                <li><strong>Email :</strong> support@techgearshop.com</li>
+                <li><strong>Téléphone :</strong> +221 33 902 14 49</li>
+                <li><strong>Adresse :</strong> Malika, Dakar, Sénégal</li>
+            </ul>
+        </div>
+        <footer>
+            <p>Merci de faire confiance à TechGear Shop pour tous vos besoins technologiques.</p>
+            <div class="footer-logo">
+                <img src="images/logo.png" alt="TechGearShop">
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
